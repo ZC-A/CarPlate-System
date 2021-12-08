@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Change or select or delete</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content=""
+    />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        addEventListener("load", function () {
+             var tem=document.getElementsByName("carplate");
+             if(tem!=""){
+                  alert("请注意,您的旧车牌会被回收利用");
+             }
+        })
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <script src="js/radiobox.js"></script>
+
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <link rel="stylesheet" href="css/fontawesome-all.css">
+    <!-- Font-Awesome-Icons-CSS -->
+    <!-- //css files -->
+    <!-- web-fonts -->
+    <!--
+    <link href="http://maxcdn.bootstrapcdn.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    -->
+    <!-- //web-fonts -->
+</head>
+
+<body>
+<!-- bg effect -->
+<div id="bg">
+    <canvas></canvas>
+    <canvas></canvas>
+    <canvas></canvas>
+</div>
+<!-- //bg effect -->
+<!-- title -->
+<h1>全国车牌选号管理系统</h1>
+<!-- //title -->
+<!-- content -->
+<div class="sub-main-w3">
+    <form action="#" method="post">
+        <h2>选择新车牌或更改车牌或删除车牌
+            <i class="fas fa-level-down-alt"></i>
+        </h2>
+        <div class="form-style-agile">
+            <label>
+                <i class="fas fa-user"></i>
+                车架号码
+            </label>
+            <input  name="enginenum" type="text" required="" th:value="${Em}" readonly>
+        </div>
+        <div class="form-style-agile">
+            <label>
+                <i class="fas fa-user"></i>
+                您现在的车牌号码
+            </label>
+            <input  name="carplate" type="text" required="" th:value="${Cp}" readonly>
+        </div>
+        <div class="form-style-agile">
+            <label>
+                <i class="fas fa-user"></i>
+                您可选的车牌号码
+            </label>
+            <input type="radio" name="choicecarp" th:value="${P1}"/>[[${P1}]]
+            <input type="radio" name="choicecarp" th:value="${P2}"/>[[${P2}]]
+            <input type="radio" name="choicecarp" th:value="${P3}"/>[[${P3}]]
+        </div>
+        <input type="submit" value="点击提交">
+    </form>
+</div>
+<!-- //content -->
+
+<!-- copyright -->
+<div class="footer">
+    <p>Copyright &copy; 2021 ZC & DLF All rights reserved.</p>
+</div>
+<!-- //copyright -->
+
+<!-- Jquery -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- //Jquery -->
+
+<!-- effect js -->
+<script src="js/canva_moving_effect.js"></script>
+<!-- //effect js -->
+
+</body>
+
+</html>
